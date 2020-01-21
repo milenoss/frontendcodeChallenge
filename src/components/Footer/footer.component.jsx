@@ -7,7 +7,7 @@ const Footer = () => (
 
    <div className ='footer'>
   <img src ={leftlogo} alt = 'leftlogo'></img>
-    <p> 2019 Codemasters  </p>
+    <p> ©2019 CODEMASTERS.LICENSED BY FORMULA ONE WORLD CHAMPINSHIP LTD AND ITS AFFILIATES  </p>
    
     <img src ={rightLogo} alt = 'rightLogo'></img>
   
