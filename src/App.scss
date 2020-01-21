@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css?family=BenchNine:400,700&display=swap');
+
+
+*{
+  font-family: 'BenchNine', sans-serif;
+
+}
+
+.App { 
+  display: grid;
+  width: 100%;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-area: header;
+  height: 5vh;
+  background-color: red;
+  width: 100%;
+  display: flex;
+
+  img{ 
+    position:relative; 
+    justify-self:center;
+    width: 20%;
+  
+ 
+  }
+
+  h3{ 
+    color: white;
+
+  }
+}
+.main { 
+  display: flex;
+  justify-content: center;
+  grid-area: main; 
+  width: 100%;
+  height: 89vh;
+  flex-direction:column;
+}
+
+
+.background{ 
+  background-image: url(../src/assets/images/header_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 54.5vh;
+  width: 100%;
+
+}
+
+.sub-footer{
+background-image: url(../src/assets/images/bg_tile.jpg);
+height: 34.5vh;
+width: 100%;
+
+
+}
+
+//options container mixin 
+@mixin box3AndBox4Settings($gridName) {
+    display:grid;
+    grid-template-areas:
+    "a1 a2";
+    grid-template-columns: 1fr 1fr;
+    grid-area: $gridName;
+
+} 
+
+
+
+.options-container{
+ display:grid;
+ grid-template-areas:
+ "logo logo logo"
+ "box1 box2 box3"
+ "box4 box2 box5";
+
+ grid-template-rows:55% 22.5% 22.5% ;
+ grid-template-columns: repeat(3, 1fr);
+ width: 90%; 
+ height: 70vh;
+ z-index: 1;
+ position: absolute;
+ align-self: center;
+ 
+    .logo {
+      display:flex;
+      justify-content: flex-end;
+      align-items: center;
+      grid-area: logo;
+      width: 100%;
+      
+      img{ 
+        position:relative; 
+        width: 35%;
+
+
+       }
+      
+    }
+    .box1{
+      display: flex;
+      grid-area: box1;
+      width: 100%;
+      background-image:url(../src/assets/images/bg_medium_stat_01.jpg);
+      background-size:cover;
+      justify-content:center;
+      flex-direction: column;
+      align-items: center;
+
+      h3 { 
+        margin: 0px;
+        color: white;
+        line-height: 3rem;
+
+        font-size: 3.5rem ;
+      }
+      p {
+        margin:0px;
+        font-size: 1.5rem;
+        color: white;
+      }
+    }
+    .box2{
+      display:flex;
+      justify-content: center;
+      grid-area: box2;
+      background-image:url(../src/assets/images/bg_large_stat.jpg);
+      background-size:cover;
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+
+       
+      img{ 
+        position:relative; 
+        width: 85%;
+
+
+       }
+
+       h3 { 
+         margin: 0px;
+         color: white;
+         font-size: 2.5rem ;
+         
+       }
+       p {
+         margin: 0px;
+         line-height:0.5rem;
+         font-size: 1rem;
+         color: white;
+       }
+
+
+
+
+    }
+    .box3{
+      @include box3AndBox4Settings(box3);
+
+     .cup{
+
+       display: flex;
+       grid-area: a1;
+       background-image:url(../src/assets/images/bg_small_stat_01.jpg);
+       background-size:cover;
+       justify-content: flex-end;
+       flex-direction: column;
+       align-items: center;
+       
+      
+       
+       img{ 
+        position:relative; 
+        width: 45%;
+
+
+       }
+
+       h3 { 
+         margin: 0px;
+         color: white;
+         font-size: 1.5rem ;
+       }
+       p {
+         margin: 0px;
+         margin-bottom: 20px;
+         line-height:0.5rem;
+        font-size: 1rem;
+         color: white;
+       }
+       
+
+     }
+
+    
+     .meter{
+       display: flex;
+       grid-area: a2;
+       background-image:url(../src/assets/images/bg_small_stat_02.jpg);
+       flex-direction: column;
+       align-items: center;
+       justify-content: flex-end;
+       background-size:cover;
+
+
+
+
+       img{ 
+        position:relative; 
+        width: 45%;
+
+
+       }
+
+       h3 { 
+         margin: 0px;
+         color: white;
+         font-size: 1.5rem ;
+       }
+       p {
+         margin: 0px;
+         margin-bottom: 20px;
+         line-height:0.5rem;
+        font-size: 1rem;
+         color: white;
+       }
+       
+
+     }
+
+
+    }
+    .box4{
+      @include box3AndBox4Settings(box4);
+      
+      .flags{
+        display: flex; 
+        grid-area: a1;
+        flex-direction: column;
+        align-items: center;
+        background-image:url(../src/assets/images/bg_small_stat_01.jpg);
+        background-size:cover;
+        justify-content:flex-end;
+
+
+       img{ 
+        position:relative; 
+        width: 65%;
+
+
+       }
+
+       h3 { 
+         margin: 0px;
+         color: white;
+         font-size: 1.5rem ;
+       }
+       p {
+         margin: 0px;
+         margin-bottom: 20px;
+         line-height:0.5rem;
+        font-size: 1rem;
+         color: white;
+       }
+ 
+      }
+ 
+      .position{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: a2;
+        background-image:url(../src/assets/images/bg_small_stat_02.jpg);
+        background-size:cover;
+        justify-content: flex-end;
+
+
+       img{ 
+        position:relative; 
+        width: 50%;
+
+
+       }
+
+       h3 { 
+         margin: 0px;
+         color: white;
+         font-size: 1.5rem ;
+       }
+       p {
+         margin: 0px;
+         margin-bottom: 20px;
+         line-height:0.5rem;
+        font-size: 1rem;
+         color: white;
+       }
+ 
+      }
+
+    }
+    .box5{
+      display: flex;
+      grid-area: box5;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+
+      
+      background-image:url(../src/assets/images/ad_f12018_buyNow.jpg);
+      background-size: cover;
+      
+      a{
+        margin: 0px;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: underline;
+      }
+
+
+    }
+
+
+    
+}
+
+.footer{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-area: footer; 
+  width: 100%;
+  background-color: black;
+  height: 6vh;
+  
+
+:nth-child(1) {
+  justify-self: start;
+  align-self: center;
+  width: 35%;
+  
+}
+
+:nth-child(2) {
+  justify-self: center;
+  align-self:center;
+  font-size: 0.5rem;
+  color: white;
+}
+
+:nth-child(3) {
+width: 15%;
+align-self: center;
+justify-self: end;
+  
+}
+
+}
