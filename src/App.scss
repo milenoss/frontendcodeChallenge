@@ -17,26 +17,57 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'h1 h2';
   grid-area: header;
   height: 5vh;
   background-color: red;
   width: 100%;
-  display: flex;
-
-  img{ 
-    position:relative; 
-    justify-self:center;
-    width: 20%;
-  
  
-  }
 
-  h3{ 
-    color: white;
+  
+.F1container {
+  grid-area: h1;
+  justify-self: start;
+  width: 100%;
+
+  img{
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    
 
   }
+  
 }
+
+.opt{
+  grid-area: h2;
+  align-items: center;
+  display: flex;
+  justify-content:flex-end;
+  color: whitesmoke;
+  width: 100%;
+
+p{
+  margin: 0px;
+  margin-left: 20px;
+  font-size: 1.20rem;
+  align-self: center;
+}
+
+
+  
+  
+
+
+}
+
+
+
+}
+
 .main { 
   display: flex;
   justify-content: center;
